@@ -41,8 +41,9 @@ if __name__ == '__main__':
             RunSklearn(X, y, mdl)
             
         elif option == '2':
-            X, y = make_blobs(n_samples = 200, centers = 2, cluster_std = 2)
-            mdl = AgglomerativeClustering(n_clusters = centers)
+            n_clusters = 2
+            X, y = make_blobs(n_samples = 200, centers = n_clusters, cluster_std = 2)
+            mdl = AgglomerativeClustering(n_clusters = n_clusters)
             RunSklearn(X, y, mdl)
             
         elif option == '3':
