@@ -1,4 +1,4 @@
-Card Name,Type,Attribute   ,Sub Type    ,ATK    ,DEF    ,Card Text
+Card Name,Type,Attribute,Sub Type,ATK,DEF,Card Text
 A/D Changer,Effect Monster,LIGHT,Warrior,100,100,You can remove from play this card in your Graveyard to select 1 monster on the field. Change its battle position.
 Absolute King Back Jack,Effect Monster,DARK,Fiend,0,0,"During your opponent's turn: You can banish this card from your Graveyard (this is a Quick Effect); excavate the top card of your Deck, and if it is a Normal Trap Card, Set it to your side of the field. Otherwise, send it to the Graveyard. That Set card can be activated during this turn. If this card is sent to the Graveyard: You can look at 3 cards from the top of your Deck, then place them on the top of the Deck in any order. You can only use each effect of ""Absolute King Back Jack"" once per turn."
 Acorno,Effect Monster,EARTH,Plant,200,400,"During your Main Phase: You can send 1 ""Pinecono"" from your hand to the Graveyard, and Special Summon this card from the hand."

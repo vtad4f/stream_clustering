@@ -1,4 +1,4 @@
-Card Name,Type,Attribute   ,Sub Type    ,ATK    ,DEF    ,Card Text
+Card Name,Type,Attribute,Sub Type,ATK,DEF,Card Text
 A Man with Wdjat,Effect Monster,DARK,Spellcaster,1600,1600,"When you Normal Summon this card, and during each of your Standby Phases, select 1 Set card on your opponent's side of the field. Pick it up and look at it, then return it to its original position."
 Abaki,Effect Monster,FIRE,Fiend,1700,1100,"When this card is destroyed and sent to the Graveyard by battle, both players take 500 damage."
 Abare Ushioni,Effect Monster,EARTH,Beast-Warrior,1200,1200,"Once per turn, you can toss a coin and call it. If you call it right, inflict 1000 damage to your opponent. If you call it wrong, you take 1000 damage."

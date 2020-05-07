@@ -1,4 +1,4 @@
-Card Name,Type,Attribute   ,Sub Type    ,ATK    ,DEF    ,Card Text
+Card Name,Type,Attribute,Sub Type,ATK,DEF,Card Text
 8-Claws Scorpion,Effect Monster,DARK,Insect,300,200,"Once per turn, you can flip this card into face-down Defense Position. When this card attacks an opponent's face-down Defense Position monster, this card's ATK becomes 2400 during damage calculation only."
 A-Team: Trap Disposal Unit,Effect Monster,FIRE,Machine,300,400,"This effect can be used during either player's turn. When your opponent activates a Trap Card, Tribute this face-up card to negate the activation of the Trap Card and destroy it."
 Achichi @Ignister,Effect Monster,FIRE,Cyberse,800,800,"If this card is Normal or Special Summoned: You can add 1 Level 4 or lower ""@Ignister"" monster from your Deck to your hand, except ""Achichi @Ignister"". At the start of the Damage Step, when your Cyberse monster battles: You can banish this card from your GY; destroy that monster you control. You can only use each effect of ""Achichi @Ignister"" once per turn."

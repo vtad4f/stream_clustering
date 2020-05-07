@@ -1,4 +1,4 @@
-Card Name,Type,Attribute   ,Sub Type    ,ATK    ,DEF    ,Card Text
+Card Name,Type,Attribute,Sub Type,ATK,DEF,Card Text
 "Aether, the Empowering Dragon",Effect Monster,LIGHT,Dragon,2300,1600,"When this card is Pendulum Summoned: You can target 1 card on the field; return it to the hand. You can only use this effect of ""Aether, the Empowering Dragon"" once per turn."
 "Akz, the Pumer",Effect Monster,EARTH,Beast-Warrior,1500,1000,"This card cannot be Normal Summoned or Set. This card can only be Special Summoned by removing from play 2 Beast-Warrior-Type monsters in your Graveyard. Once per turn, you can discard 1 Beast-Warrior-Type monster from your hand to activate 1 of the following effects:"
 ,,,,,,Double this card's ATK until the End Phase.
