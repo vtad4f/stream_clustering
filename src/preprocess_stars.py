@@ -87,10 +87,11 @@ def Write(header_row, rows, filename):
             
 if __name__ == '__main__':
     """
-        BRIEF  Parse each page of https://www.yugiohcardguide.com/level/0.html - .../12.html
-               and assemble a single csv with star columns
+        BRIEF  Parse and assemble a single csv with star columns
+               https://www.yugiohcardguide.com/level/0.html
+               all the way through .../12.html
                
-               Note that the page contents have been copied by hand to individual csv's
+               Note that the page contents have been copied manually
     """
     header_row, rows = ReadAll()
     Write(header_row, rows, 'stars.csv')
@@ -101,7 +102,7 @@ if __name__ == '__main__':
     Write([
         'attrib1', # atk
         'attrib2', # def
-        'attrib3', # word ct
+        # 'attrib3', # word ct
         'class'    # level
     ], rows, 'stream1.csv')
     
