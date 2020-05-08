@@ -8,6 +8,7 @@ import re
 
 DATA_DIR = 'data'
 WORD = re.compile(r'([a-zA-Z0-9_]+)', re.MULTILINE)
+D_WORDS = re.compile(r'destroy|damage', re.MULTILINE)
 
 
 def ReadAll():
@@ -37,41 +38,54 @@ def ProcessText(rows):
     for row in rows:
         if row['Type'] == 'Normal Monster':
             row['Word Count'] = 0 # Just some lore, doesn't mean anything
+            row['D Word Count'] = 0
         else:
             row['Word Count'] = len(WORD.findall(row['Card Text']))
+            row['D Word Count'] = len(D_WORDS.findall(row['Card Text']))
             
             
 def FixNumeric(rows):
     """
         BRIEF  Normalize the input
     """
-    max_atk = 0
-    max_def = 0
-    max_ct = 0
+    max_atk  = 0
+    max_def  = 0
+    max_wct  = 0
+    max_dwct = 0
     
-    # Replace ??? with 0
-    for row in rows:
+    # Handle ?, ???, X000 values
+    bad_vals = []
+    for i, row in enumerate(rows):
         for label in ['ATK', 'DEF']:
             if '?' in row[label] or 'X' in row[label]:
-                row[label] = '0'
+                bad_vals.append(i)
+                break
                 
+    for i in reversed(bad_vals):
+        rows.pop(i)
+        # row[label] = '0'
+        
     for row in rows:
         # print(row['Card Name']) # for debugging
-        atk_ = int(row['ATK'])
-        def_ = int(row['DEF'])
-        ct   = int(row['Word Count'])
+        atk_  = int(row['ATK'])
+        def_  = int(row['DEF'])
+        w_ct  = int(row['Word Count'])
+        dw_ct = int(row['D Word Count'])
         
         if atk_ > max_atk:
             max_atk = atk_
         if def_ > max_def:
             max_def = def_
-        if ct > max_ct:
-            max_ct = ct
+        if w_ct > max_wct:
+            max_wct = w_ct
+        if dw_ct > max_dwct:
+            max_dwct = dw_ct
             
     for row in rows:
         row['attrib1'] = float(row['ATK'])/max_atk
         row['attrib2'] = float(row['DEF'])/max_def
-        row['attrib3'] = float(row['Word Count'])/max_ct
+        row['attrib3'] = 1 - float(row['Word Count'])/max_wct
+        row['attrib4'] = float(row['D Word Count'])/max_dwct
         row['class']   = row['Stars']
         
 def Write(header_row, rows, filename):
@@ -102,7 +116,8 @@ if __name__ == '__main__':
     Write([
         'attrib1', # atk
         'attrib2', # def
-        # 'attrib3', # word ct
+        'attrib3', # word ct
+        # 'attrib4', # d word ct
         'class'    # level
     ], rows, 'stream1.csv')
     
