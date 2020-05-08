@@ -1,22 +1,21 @@
 
 
-from matplotlib import pyplot as graph
-from sklearn.cluster import AgglomerativeClustering
-from sklearn.datasets import make_blobs
+from skmultiflow.data import FileStream
+from skmultiflow.lazy.knn import KNN
+from skmultiflow.evaluation import EvaluatePrequential
 
-n_clusters = 2
-colors = ['cyan', 'red']
+n_neighbors     = 8
+max_window_size = 2000
+leaf_size       = 30
+n_estimators    = 30
+show_plot       = True
+pretrain_size   = 100
+max_samples     = 7000
+metrics         = ['accuracy']
 
-X, y_gen = make_blobs(n_samples = 200, centers = n_clusters, cluster_std = 2)
-
-for i in range(n_clusters):
-    graph.scatter(X[y_gen==i,0], X[y_gen==i,1], c=colors[i])
-graph.show()
-
-mdl = AgglomerativeClustering()
-y_clustered = mdl.fit_predict(X)
-
-for i in range(n_clusters):
-    graph.scatter(X[y_clustered==i,0], X[y_clustered==i,1], c=colors[i])
-graph.show()
+stream = FileStream('data/stream1.csv')
+stream.prepare_for_use()
+mdl = KNN(n_neighbors=n_neighbors, max_window_size=max_window_size, leaf_size=leaf_size)
+evaluator = EvaluatePrequential(show_plot=show_plot, pretrain_size=pretrain_size, max_samples=max_samples, metrics=metrics)
+evaluator.evaluate(stream=stream, model=mdl)
 
